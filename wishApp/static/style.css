@@ -1,0 +1,35 @@
+/* *{ 
+    outline: 1px dotted red
+} */
+
+.form-box{
+    display: inline-block;
+    background-color: grey;
+    vertical-align: top;
+    margin: 10px;
+}
+
+    .form-box form{
+        margin: 25px;
+    }
+    
+    .form-box input[type="text"]{
+        display: inline-block;
+    }
+
+    .form-box label{
+        text-align: left;
+    }
+
+#errors {
+    text-align: center;
+    color: red;
+    background-color: black;
+    padding: 20px;
+    height: 100px;
+}
+
+.custom {
+    display: flex;
+    justify-content: right;
+}
