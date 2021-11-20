@@ -20,13 +20,14 @@ def register(request):
         pw_hash = bcrypt.hashpw(
             request.POST.get('password').encode(), bcrypt.gensalt()).decode()
         print(pw_hash)
-        User.objects.create(
+        new_user = User.objects.create(
             first_name=request.POST['first_name'],
             last_name=request.POST['last_name'],
             user_name=request.POST['user_name'],
             email=request.POST['email'],
             password=pw_hash
         )
+        request.session["user_id"] = new_user.id
         messages.success(request, "You have successfully registered!")
         return redirect('/wishes')
 
